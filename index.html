@@ -51,25 +51,25 @@
         <table>
           <tr>
             <td align="center"> <small>
-              <img class="plain" src="images/university_of_edinburgh.png" style="height:60px"> <br/>
+              <!-- <img class="plain" src="images/university_of_edinburgh.png" style="height:40px"> <br/> -->
               Ole Weidner <br/>
               School of Informatics <br/>
               University of Edinburgh <br/>
-              <a href="mailto:ole.weidner@ed.ac.uk">ole.weidner@ed.ac.uk</a>
+              <i><a href="mailto:ole.weidner@ed.ac.uk">ole.weidner@ed.ac.uk</a></i>
             </small> </td>
             <td align="center"> <small>
-              <img class="plain" src="images/university_of_st_andrews.png" style="height:64px"> <br/>
+              <!-- <img class="plain" src="images/university_of_st_andrews.png" style="height:40px"> <br/> -->
               Adam Barker <br/>
               School of Computer Science <br/>
               University of St Andrews <br/>
-              <a href="mailto:adam.barker@st-andrews.ac.uk">adam.barker@st-andrews.ac.uk</a>
+              <i><a href="mailto:adam.barker@st-andrews.ac.uk">adam.barker@st-andrews.ac.uk</a></i>
             </small> </td>
             <td align="center"> <small>
-              <img class="plain" src="images/university_of_edinburgh.png" style="height:64px"> <br/>
+              <!-- <img class="plain" src="images/university_of_edinburgh.png" style="height:40px"> <br/> -->
               Malcolm Atkinson <br/>
               School of Informatics <br/>
               University of Edinburgh <br/>
-              <a href="mailto:malcolm.atkinson@ed.ac.uk">malcolm.atkinson@ed.ac.uk</a>
+              <i><a href="mailto:malcolm.atkinson@ed.ac.uk">malcolm.atkinson@ed.ac.uk</a></i>
             </small> </td>
         </table>
 
@@ -118,164 +118,73 @@
       </section>
       <!------------------------------------------------------------------------------------------->
 
-
-
-      <!-- SLIDE XX -->
-      <!------------------------------------------------------------------------------------------->
-      <section>
-        <h2>2nd Generation HPC Applications</h2>
-      </section>
-      <!------------------------------------------------------------------------------------------->
-
-
-
-      <!-- <section>
-      <h2>Some Examples</h2>
-
-      <ul>
-      <li>Diverging from tightly-coupled monoliths</li>
-      <li class="">Multi-component workflows, many-task, etc.</li>
-      <li class="">Not always compute-centric</li>
-      <li class="">Applications that come from a non-HPC context</li>
-      <li class="">Distributed, leverage multiple platforms and federations</li>
-      <li class="">Traditionalists claim: <i>applications HPC systems weren't designed for ... </i></li>
-
-    </ul>
-
-
-
-
-    <aside class="notes">
-    <ul>
-    <li>Depending who you talk to </li>
-  </ul>
-</aside>
-
-</section> -->
-
-
-
-
 <!-- SLIDE XX -->
 <!------------------------------------------------------------------------------------------->
 <section>
-  <h2>Community &amp; Context</h2>
 
-  <p>Many different "cultures" and backgrounds:</p>
+  <section>
+    <h2>HPC Telemetry Data</h2>
+  </section>
 
-  <ul>
-    <li class="">Wide spectrum of different scientific domains </li>
-    <ul>
-      <li> Some of them with no computational "traditions" </li>
-    </ul>
-    <li class=""><i>Scientist-Developers</i> (<i>computational-*ist</i>) and Data Scientists are on the rise! </li>
+  <section>
+    <h2>TOPIC A</h2>
+  </section>
 
-    <li class="">Software engineers "experimenting" at scale</li>
-  </ul>
-  <span class="fragment fade-in">
-    <br><br>
-    <h4 style="background-color: #ca1e3b">Different user expectations and
-      significantly different levels of expertise !</h4>
-    </ul>
-  </span>
+  <section>
+    <h2>TOPIC B</h2>
+  </section>
+
+  <section>
+    <h2>TOPIC C</u></h2>
+  </section>
+
 </section>
 <!------------------------------------------------------------------------------------------->
 
-
-<!-- SLIDE XX -->
-<!------------------------------------------------------------------------------------------->
-<section>
-  <h2>Origins of Application Complexity</h2>
-  <ul>
-    <li class="">Applications build on higher-level tools and frameworks for execution and resource management:</li>
-    <ul>
-      <li class="">Scientific workflow systems (dispel4py, Pegasus, ...)</li>
-      <li class="">Workload management systems (Pilot jobs, Storm, ...)</li>
-      <li class="">Distributed systems (Globus, Condor, ...)</li>
-    </ul>
-    <li class="">Different languages and runtime environments (Python, R, C, Java, Matlab ...) </li>
-    <li class="">Dependencies / interaction with external services and data sources </li>
-  </ul>
-  <aside class="notes">
-    <ul>
-      <li>Not just individual applications, but frameworks, etc.</li>
-    </ul>
-  </aside>
-</section>
-<!------------------------------------------------------------------------------------------->
-
-<!-- SLIDE XX -->
-<!------------------------------------------------------------------------------------------->
-<section>
-  <h2>Clash with HPC Culture</h2>
-  <p>Suboptimal mapping to the HPC usage model. For example:</p>
-  <ul>
-    <li>Data-intensive analytics rely on predictable I/O, but there are no QoS contracts for I/O </li>
-    <li>Distribution applications rely on network connectivity, but there are no QoS contracts for that either</li>
-    <li>Many-task applications require finegrained and flexible task placement</li>
-    <li>Dynamic / non-deterministic algorithms need flexible resource allocation, but the model is static </li>
-  </ul>
-</section>
-<!------------------------------------------------------------------------------------------->
-
-
-<!-- SLIDE XX -->
-<!------------------------------------------------------------------------------------------->
-<section>
-  <h2>Main chanllenge: Inefficiency </h2>
-  <ul>
-    <li>Poor performance due to unfavorable resource mapping</li>
-    <li>Or even worse: premature termination</li>
-    <ul>
-      <li>No results mean wasted CPU hours, energy and $$$</li>
-      <li>"Hollow utilization" for the platform provider</li>
-      <!-- <li>Example: application runs out of wall-time before producing a result</li> -->
-    </ul>
-  </ul>
-</section>
-<!------------------------------------------------------------------------------------------->
-
-
-<!-- SLIDE XX -->
-<!------------------------------------------------------------------------------------------->
-<!------------------------------------------------------------------------------------------->
 
 <!-- SLIDE XX -->
 <!------------------------------------------------------------------------------------------->
 <section>
 
   <section>
-    <h2>Mitigate: Observe and React</h2>
-    <p>Observe application behavior (intrinsic) and the behavior of the
-      environment (extrinsic) and react accordingly, based on a set of rules. For example:
-    </p>
-
-    <ul>
-      <li>If I/O degrades below a critical point, migrate affected processes or terminate application</li>
-      <li>If node memory is exhausted, reduce task density on the node or reduce data / array sizes</li>
-      <li>If CPU utilization is not saturated, increase the task density</li>
-    </ul>
-
+    <h2>Motivational Use-Cases</h2>
   </section>
 
   <section>
-    <h2>I/O Cut off point</h2>
-    <img class="test" data-src="./images/cutoff.png"\>
+    <h2>TOPIC A</h2>
   </section>
 
   <section>
-    <h2>Task Packing Sweet Spot</h2>
-    <img class="test" data-src="./images/sweetspot.png"\>
+    <h2>TOPIC B</h2>
   </section>
 
   <section>
-    <h2>Operational Data <br>=<br> <u>Foundation for mitigating inefficiency</u></h2>
+    <h2>TOPIC C</u></h2>
   </section>
-
 
 </section>
 
+<!-- SLIDE XX -->
 <!------------------------------------------------------------------------------------------->
+<section>
+
+  <section>
+    <h2>Challenges</h2>
+  </section>
+
+  <section>
+    <h2>TOPIC A</h2>
+  </section>
+
+  <section>
+    <h2>TOPIC B</h2>
+  </section>
+
+  <section>
+    <h2>TOPIC C</u></h2>
+  </section>
+
+</section>
 
 <!-- SLIDE XX -->
 <!------------------------------------------------------------------------------------------->
@@ -563,8 +472,8 @@
             <h1>THANK YOU</h1>
             <p>
               Slides available online: <br>
-              <a href="https://datadrivenhpc.github.io/ddhpc-talk/">
-                https://datadrivenhpc.github.io/ddhpc-talk/</a>
+              <a style="background-color: #ca1e3b" href="https://oweidner.github.io/ross-2017-talk">
+                https://oweidner.github.io/ross-2017-talk</a>
               </p>
             </section>
 
