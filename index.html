@@ -109,10 +109,10 @@
         <ol>
           <li>Application Challenges &amp; Motivation</li>
           <li>Telemetry Data as Platform Service</li>
-          <li>Graph-Based Platform Model (Context Structure)</li>
-          <li>Unified Programming Interface</li>
-          <li>Prototype Implementation </li>
-          <li>Outlook &amp; Next Steps</li>
+          <li>Anatomy &amp; Context Graph Model</li>
+          <li>Programming Interface</li>
+          <li>Implementation Blueprint</li>
+          <li>Outlook</li>
 
         </ol>
       </section>
@@ -259,9 +259,11 @@
 
   <section> <!-- SLIDE XX -->
 
-    <h2>Lessons Learned</h2>
-    Argue high costs of creating insights, time + cpu hours
-    and discuss problem of data without strucutre / model.
+    <h2>Challenges &amp; Lessons Learned</h2>
+    <ul>
+      <li>Explain the overhead involved and that no there is no tooling support for this</li>
+      <li>Explain how this is a problem of many 2nd gen application</li>
+    </ul>
 
     <aside class="notes">
       - Notes
@@ -279,14 +281,30 @@
 
   <section>
     <h2>Telemetry Data as Platform Service</h2>
+
+    <ul>
+      <li>Explain how seastar started as a gedankenexperiment "what if there would be a platform service..."</li>
+    </ul>
+
+
   </section>
 
   <section>
-    <h2>TOPIC A</h2>
+    <h2>Properties</h2>
+
+    <ul>
+      <li>Explain the requirements for such a platform</li>
+    </ul>
+
   </section>
 
   <section>
     <h2>Requirements</h2>
+
+    <ul>
+      <li>Explain the requirements for such a platform</li>
+    </ul>
+
   </section>
 
   <section>
@@ -300,19 +318,23 @@
 <section>
 
   <section>
-    <h2>Challenges</h2>
+    <h2>Anatomy &amp; Context Graph Model</h2>
   </section>
 
   <section>
-    <h2>TOPIC A</h2>
+    <h2>Application and Platform Anatomy</h2>
+    Describe time-variant graph structures
   </section>
 
   <section>
-    <h2>TOPIC B</h2>
+    <h2>Context Mapping</h2>
+    Explain how to get from application to platform and vice versa.
   </section>
 
   <section>
-    <h2>TOPIC C</u></h2>
+    <h2>Example Context Graph</u></h2>
+    <img class="plain" src="images/contextgraph.png" style="height:450px"> <br/>
+    Needs annotations. We could even try to animate this
   </section>
 
 </section>
@@ -320,73 +342,61 @@
 <!-- SLIDE XX -->
 <!------------------------------------------------------------------------------------------->
 <section>
-  <h2>Another Definition of 2nd Gen Apps</h2>
 
-  <br><br>
-  <h4 style="background-color: #ca1e3b">
-    "Second generation HPC applications require continuous access to
-    operational data in order to <u>observe</u>
-    their behavior and the behavior of their environment so they can operate efficiently."
-  </h4>
-</section>
-<!------------------------------------------------------------------------------------------->
+  <section>
+    <h2>Programming Interface</h2>
 
-
-<!-- SLIDE XX -->
-<!------------------------------------------------------------------------------------------->
-<section>
-  <h2>Problem</h2>
-  <br>
-
-  <h3>Observing on a small scale, in a desktop environment is (relatively) simple</h3>
-  <br>
-  <h3 style="background-color: #ca1e3b">On a large scale on an HPC platform it is very difficult</h3>
-</section>
-<!------------------------------------------------------------------------------------------->
-
-
-<!-- SLIDE XX -->
-<!------------------------------------------------------------------------------------------->
-<section>
-  <h2>Why is it difficult?</h2>
-  <ul>
-    <li>User's line-of-sight ends at the job-level</li>
-    <li>Data collection requires application instrumentation</li>
-
-    <li>Collection and transport at scale is non-trival</li>
-    <li>Identifying anomalies and patterns in a stream of data is not trivial (especially at scale)</li>
-
-    <br>
-    <h3 style="background-color: #ca1e3b">&nbsp;Result: Many applications continue to "fly blindly"&nbsp;</h3>
-
-
-  </ul>
-</section>
-<!------------------------------------------------------------------------------------------->
-
-
-
-<!-- SLIDE XX -->
-<!------------------------------------------------------------------------------------------->
-<section>
-  <h2>Requirements</u></h2>
-  <p>In order to implement strategies against "flying blindly", applications require
-    an environment which provides:</p>
-    <ol>
-      <li>infrastructure to transport, analyze, store application data (at scale)</li>
-      <li>comprehensive real-time operational data from the HPC platform</li>
-      <li>mechanisms to interact with the platform to implement feedback loops</li>
-    </ol>
+    Describe the API with some examples (from paper)
   </section>
-  <!------------------------------------------------------------------------------------------->
+
+  <section>
+    <h2>Language-Agnostic REST API</h2>
+
+    Describe how the graph can be queries effieciently with GraphQL
+    http://graphql.org
+  </section>
+
+  <section>
+    <h2>Complex Graph Queries</h2>
+
+    Describe how the graph can be queries effieciently with GraphQL
+    http://graphql.org
+  </section>
+
+  <section>
+    <h2>Notification and Call-Backs</h2>
+
+    Describe how they are registerd and
+    http://graphql.org
+  </section>
+
+</section>
 
 
+<!------------------------------------------------------------------------------------------->
+
+<section>
+  <h2>Implementation Blueprint</h2>
+
+  Describe the implementation blueprint (figures can be taken from paper)
+
+</section>
 
 
 
   <!-- SLIDE XX -->
   <!------------------------------------------------------------------------------------------->
   <section>
+
+    <section>
+      <h2>Outlook</h2>
+
+      Describe the implementation blueprint (figures can be taken from paper)
+
+    </section>
+
+    <section>
+
     <h2>Data-Driven HPC Idea</u></h2>
     <p>Apply principles, architectures and tools from "big data" / large-scale data analytics to
       manage application and platform operational data:</p>
@@ -404,198 +414,9 @@
 
 
       </section>
-      <!------------------------------------------------------------------------------------------->
-
-      <!-- SLIDE XX -->
-      <!------------------------------------------------------------------------------------------->
-      <section>
-        <h2>Challenge 1: Scale</h2>
-
-        <p>How do we handle (operational) data at scale without impeding the
-          performance of the platforms or applications</p>
-
-          <ul>
-            <li>How to collect data at scale?</li>
-            <li>How to transport data at scale?</li>
-            <li>How to analyze data at scale?</li>
-          </ul>
-
-          <br><br>
-          <!-- <h4 class="fragment fade-in" style="background-color: #ca1e3b">We can turn to big data to solve most of these problems for us</h4> -->
-
-        </section>
-        <!------------------------------------------------------------------------------------------->
-
-
-        <!-- SLIDE XX -->
-        <!------------------------------------------------------------------------------------------->
-        <section>
-          <h2>Challenge 2: Scope and Expertise</h2>
-
-          <p>Different user and application groups require data at different levels, from raw data to high-level signals.
-            How do we account for different requirements? How do we support a
-            broad level of expertises? The majority of users are <u>not</u> data scientits.
-          </p>
-
-          <br><br>
-          <!-- <h4 class="fragment fade-in" style="background-color: #ca1e3b">Translates to resarch questions in the area of analytics and interfaces</h4> -->
-
-
-        </section>
-        <!------------------------------------------------------------------------------------------->
-
-
-        <!-- SLIDE XX -->
-        <!------------------------------------------------------------------------------------------->
-        <section>
-          <h2>Challenge 3: Control and Feedback</h2>
-
-          <p>Once we have signals, how can we react to them. How do we interact
-            with the resource manager? Where can decision logic be implemented?</p>
-
-            <br><br>
-            <!-- <h4 class="fragment fade-in" style="background-color: #ca1e3b">Translates to resarch questions in the area of system architecture</h4> -->
-
-
-          </section>
-          <!------------------------------------------------------------------------------------------->
-
-
-          <!-- SLIDE XX -->
-          <!------------------------------------------------------------------------------------------->
-          <section>
-            <h2>Challenge 4: Integration</h2>
-
-            <p>How would a data-driven platform be integrated with HPC
-            systems? How do we bridge the gap to the resource management / queuing
-            systems? How to avoid disruptiveness? </p>
-
-
-            </section>
-            <!------------------------------------------------------------------------------------------->
-
-
-
-            <!-- SLIDE XX -->
-            <!------------------------------------------------------------------------------------------->
-            <!-- <section>
-            <h2>Operational Data = <u>Foundation for Insights</u></h2>
-            <span class="fragment fade-in">instead of<br><br></span>
-            <h2><font class="fragment fade-in" style="background-color: #ca1e3b">&nbsp; Flying Blind &nbsp;</font></h2>
-          </section> -->
-          <!------------------------------------------------------------------------------------------->
-
-          <!-- SLIDE XX -->
-          <!------------------------------------------------------------------------------------------->
-          <section>
-            <h2>Research Approach</h2>
-            <p>Build a prototype Data-Driven HPC system that handles
-              data collection and addresses the scale challanges. Explore the
-              other challanges within this prototype, define the research questions.
-            </p>
-        </section>
-        <!------------------------------------------------------------------------------------------->
-
-        <!-- SLIDE XX -->
-        <!------------------------------------------------------------------------------------------->
-
-        <section>
-          <h2>DDHPC  Prototype</h2>
-          <img class="test" data-src="./images/architecture.png"\>
-        </section>
-
-        <section>
-          <h2>DDHPC  Architecture</h2>
-          <img class="test" data-src="./images/arch.png"\>
-        </section>
-    <!------------------------------------------------------------------------------------------->
-
-
-    <!-- SLIDE XX -->
-    <!------------------------------------------------------------------------------------------->
-    <section>
-      <h2>DDHPC Data Model</h2>
-      <p>Allows "hollistic", drill-down view of application jobs:</p>
-      <ul>
-        <li>Job level > process level > thread level</li>
-        <li>Resouce Data</li>
-        <ul><li>CPU counters, memory and filesystem metrics, network and disk I/O counters, </li> </ul>
-        <li>Process Data</li>
-        <ul><li>CPU counters, memory and filesystem metrics, network and disk I/O counters, </li> </ul>
-        <li>Custom application-defined data</li>
-      </ul>
     </section>
-    <!------------------------------------------------------------------------------------------->
-
-    <section>
-      <h2>DDHPC Data Model</h2>
-      <img class="test" data-src="./images/drilldown.png"\>
-    </section>
-
-    <!-- SLIDE XX -->
-    <!------------------------------------------------------------------------------------------->
-    <section>
-      <h2>DDHPC API</h2>
-      <ul>
-        <li>Provides access to application job data</li>
-        <li>Allows definition of signals based on data</li>
-        <li>Provides callbacks when a signal is triggerd</li>
-        <li>Allows to access application process controls</li>
-      </ul>
-    </section>
-    <!------------------------------------------------------------------------------------------->
-
-
-
-    <!-- SLIDE XX -->
-    <!------------------------------------------------------------------------------------------->
-    <section>
-      <h2>Data Collection</h2>
-      <p>A set of data collection services run on each node and forward
-        data to the Kafka messaging servers</p>
-        <ul>
-          <li>ddhpc-resource-sensor: collects resource-level data</li>
-          <li>ddhpc-process-sensor: collects process-level data</li>
-          <li>ddhpc-application-sensor: records custom application signals</li>
-        </ul>
-      </section>
       <!------------------------------------------------------------------------------------------->
 
-
-      <!-- SLIDE XX -->
-      <!------------------------------------------------------------------------------------------->
-      <section>
-        <h2>Control &amp; Data Access</h2>
-        <p>API endpoints and process controller allow application processes
-          to be modified and to access the DDHPC system</p>
-          <ul>
-            <li>ddhpc-api-proxy: local forwarding agent and cache for the API to prevent bottlenecks.</li>
-            <li>ddhpc-process-controller: can set process niceness and
-              I/O niceness</li>
-            </ul>
-          </section>
-          <!------------------------------------------------------------------------------------------->
-
-
-
-          <!-- SLIDE XX -->
-          <!------------------------------------------------------------------------------------------->
-          <section>
-            <h2>Where are we? Next steps.</h2>
-              <ul>
-                <li>Simple prototype implemented alongside a 4-node SLURM "toy" cluster in AWS</li>
-                <li>First version of data model and API<br><br></li>
-
-                <li>Implement some application use-cases.</li>
-                <li>Explore different ways to react to signals:</li>
-                <ul>
-                  <li>programmatically in the application</li>
-                  <li>via user-defined, high-level rules in the system</li>
-                </ul>
-
-                <li>How do we evaluate? What are the metrics of "success"?</li>
-              </ul>
-            </section>
             <!------------------------------------------------------------------------------------------->
 
 
