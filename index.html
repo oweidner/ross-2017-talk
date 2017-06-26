@@ -237,375 +237,426 @@
         <h2>Finding the Culprint</h2>
 
         <p>A faulty edge switch and a Lustre problem caused some nodes to
-        misbehave </p>
-        <img class="plain" src="images/s1_3.png" style="max-height:450px"> <br/>
+          misbehave </p>
+          <img class="plain" src="images/s1_3.png" style="max-height:450px"> <br/>
 
-        <aside class="notes">
-          <ul>
-
-            <li>
-              <strong>Putting it into the framework</strong>
-              Assuming that these things could happen anytime and
-              anywhere, we started to put the mechanisms we have developed
-              into our application framework so that faulty nodes can
-              be blacklisted automatically.
-            </li>
-
-          </ul>
-        </aside>
-
-      </section>
-
-      <section> <!-- SLIDE XX -->
-
-        <h2>Another Interesting Case</h2>
-
-        <p>
-          Again an unexpected runtime distribution of supposedly
-          homogeneous simulation tasks
-        </p>
-
-        <img class="plain" src="images/s2_1.png" style="max-height:450px"> <br/>
-
-        <aside class="notes">
-
-          <ul>
-            <li>
-              Notes
-            </li>
-          </ul>
-
-        </aside>
-
-      </section>
-
-      <section> <!-- SLIDE XX -->
-
-        <h2>Observations</h2>
-
-        <p>
-          Outliers seem to run out of memory and crash
-        </p>
-
-        <img class="plain" src="images/s2_2.png" style="max-height:450px"> <br/>
-
-        <aside class="notes">
-          <ul>
-            <li>
-              <strong>Again, difficult to reproduce</strong>
-            </li>
-            <li>
-              <strong>Again, we instrument</strong>
-            </li>
-          </ul>
-
-        </aside>
-
-      </section>
-
-      <section> <!-- SLIDE XX -->
-
-        <h2>Finding the Culprint</h2>
-
-        <ul>
-          <li>
-            Specific structural properties of the input data would cause the
-            algorithm to take a different trajectory
-          </li>
-          <li>
-            Reduing the task-packing (preempt other tasks on the node) based on
-            observed memory consumption fixed the issue
-          </li>
-        </ul>
-
-
-        <aside class="notes">
-
-          <ul>
+          <aside class="notes">
             <ul>
-              <strong>Put it into the framework</strong>
+
+              <li>
+                <strong>Putting it into the framework</strong>
+                Assuming that these things could happen anytime and
+                anywhere, we started to put the mechanisms we have developed
+                into our application framework so that faulty nodes can
+                be blacklisted automatically.
+              </li>
+
             </ul>
-          </ul>
+          </aside>
 
-        </aside>
+        </section>
 
-      </section>
+        <section> <!-- SLIDE XX -->
 
-      <section> <!-- SLIDE XX -->
+          <h2>Another Interesting Case</h2>
 
-        <h2>Experience &amp; Lessons Learned</h2>
-        <ul>
-          <li>Instrumetation requires a lot of effort</li>
-          <li>Collecting and analysing data (at scale) is non-trivial</li>
-          <li>Feeding the data back in to the application is non-trivial</li>
-          <li>Existing tooling is sparse and mostly geard toward post-mortem,
-            parallel code debugging
-          <li>
-            Without knowing and understanding the platform "anatomy" and context, data
-            can be difficult to interpret, e.g., what is considered "poor" I/O,
-            what is the spatial layout of processes across nodes?
-          </li>
+          <p>
+            Again an unexpected runtime distribution of supposedly
+            homogeneous simulation tasks
+          </p>
 
-        </ul>
+          <img class="plain" src="images/s2_1.png" style="max-height:450px"> <br/>
 
-        <aside class="notes">
+          <aside class="notes">
+
+            <ul>
+              <li>
+                Notes
+              </li>
+            </ul>
+
+          </aside>
+
+        </section>
+
+        <section> <!-- SLIDE XX -->
+
+          <h2>Observations</h2>
+
+          <p>
+            Outliers seem to run out of memory and crash
+          </p>
+
+          <img class="plain" src="images/s2_2.png" style="max-height:450px"> <br/>
+
+          <aside class="notes">
+            <ul>
+              <li>
+                <strong>Again, difficult to reproduce</strong>
+              </li>
+              <li>
+                <strong>Again, we instrument</strong>
+              </li>
+            </ul>
+
+          </aside>
+
+        </section>
+
+        <section> <!-- SLIDE XX -->
+
+          <h2>Finding the Culprint</h2>
+
           <ul>
-            <li>Notes</li>
+            <li>
+              Specific structural properties of the input data would cause the
+              algorithm to take a different trajectory
+            </li>
+            <li>
+              Reduing the task-packing (preempt other tasks on the node) based on
+              observed memory consumption fixed the issue
+            </li>
           </ul>
-        </aside>
-
-      </section>
-
-      <section> <!-- SLIDE XX -->
-
-        <h2>Experience &amp; Lessons Learned <i>cont.</i></h2>
-
-        <ul>
-          <li>"Everyone does it..."</li>
-          <li>Adressing the issue is expensive</li>
-          <li>Ignoring it can be expensive, too:</li>
-        </ul>
-
-        <img class="plain" src="images/epcc_data.png"> <br/>
 
 
+          <aside class="notes">
 
-        <aside class="notes">
+            <ul>
+              <ul>
+                <strong>Put it into the framework</strong>
+              </ul>
+            </ul>
+
+          </aside>
+
+        </section>
+
+        <section> <!-- SLIDE XX -->
+
+          <h2>Experience &amp; Lessons Learned</h2>
           <ul>
-            <li>Notes</li>
-          </ul>
-        </aside>
+            <li>Instrumetation requires a lot of effort</li>
+            <li>Collecting and analysing data (at scale) is non-trivial</li>
+            <li>Feeding the data back in to the application is non-trivial</li>
+            <li>Existing tooling is sparse and mostly geard toward post-mortem,
+              parallel code debugging
+              <li>
+                Without knowing and understanding the platform "anatomy" and context, data
+                can be difficult to interpret, e.g., what is considered "poor" I/O,
+                what is the spatial layout of processes across nodes?
+              </li>
 
-      </section>
+            </ul>
 
-    </section>
-    <!------------------------------------------------------------------------------------------->
-
-
-    <!-- SLIDE XX -->
-    <!------------------------------------------------------------------------------------------->
-    <section>
-
-      <section>
-        <h1>2</h1>
-        <h2>Telemetry as HPC Platform Service</h2>
-      </section>
-
-      <section>
-        <h2>Status Quo: Application-Driven </h2>
-
-        <img class="plain" src="images/data_collection_as_platform_service.png" style="max-height:450px"> <br/>
-        <p>Application-level collection and processing of telemtry data. This causes a lot of overhead.</p>
-
-      </section>
-
-      <section>
-        <h2>Platform Service Approach</h2>
-
-        <img class="plain" src="images/data_collection_as_platform_service_2.png" <br/>
-        <p> Telemetry service takes over data collection and provides data access and higher-level functions to applications</p>
-
-      </section>
-
-      <section>
-        <h2>Requirements</h2>
-
-        <ul>
-          <li>Scalable (think exascale!)</li>
-        </ul>
-
-      </section>
-
-      <section>
-        <h2>Requirements <i>cont.</i></h2>
-
-        <ul>
-          <li>x</li>
-        </ul>
-
-      </section>
-
-    </section>
-
-    <!-- SLIDE XX -->
-    <!------------------------------------------------------------------------------------------->
-    <section>
-
-      <section>
-        <h1>3</h1>
-
-        <h2>Anatomy &amp; Context Graph Model</h2>
-      </section>
-
-      <section>
-        <h2>Application and Platform Anatomy</h2>
-        Describe time-variant graph structures
-      </section>
-
-      <section>
-        <h2>Context Mapping</h2>
-        Explain how to get from application to platform and vice versa.
-      </section>
-
-      <section>
-        <h2>Example Context Graph</u></h2>
-        <img class="plain" src="images/contextgraph.png" style="max-height:450px"> <br/>
-        Needs annotations. We could even try to animate this
-      </section>
-
-    </section>
-
-    <!-- SLIDE XX -->
-    <!------------------------------------------------------------------------------------------->
-    <section>
-
-      <section>
-        <h1>4</h1>
-        <h2>Service Interaction &amp; Interface</h2>
-
-        <pre><code data-trim data-noescape>
-          (def lazy-fib
-          (concat
-          [0 1]
-          <mark>((fn rfib [a b]</mark>
-          (lazy-cons (+ a b) (rfib b (+ a b)))) 0 1)))
-        </code></pre>
-
-      </section>
-
-      <section>
-        <h2>Language-Agnostic REST API</h2>
-
-        Describe how the graph can be queries effieciently with GraphQL
-        http://graphql.org
-      </section>
-
-      <section>
-        <h2>Complex Graph Queries</h2>
-
-        Describe how the graph can be queries effieciently with GraphQL
-        http://graphql.org
-      </section>
-
-      <section>
-        <h2>Notification and Call-Backs</h2>
-
-        Describe how they are registerd and
-        http://graphql.org
-      </section>
-
-    </section>
-
-
-    <!------------------------------------------------------------------------------------------->
-
-    <section>
-
-      <section>
-        <h1>5</h1>
-        <h2>Implementation </h2>
-      </section>
-
-      <section>
-        <h2>subtopic</h2>
-      </section>
-
-    </section>
-
-
-
-    <!-- SLIDE XX -->
-    <!------------------------------------------------------------------------------------------->
-    <section>
-
-      <section>
-        <h1>6</h1>
-
-        <h2>Outlook</h2>
-
-        Describe the implementation  (figures can be taken from paper)
-
-      </section>
-
-      <section>
-
-        <h2>Data-Driven HPC Idea</u></h2>
-        <p>Apply principles, architectures and tools from "big data" / large-scale data analytics to
-          manage application and platform operational data:</p>
-          <ol>
-            <li>Look at HPC clusters and their application as large-scale distributed continuous sensor data</li>
-            <li>Use scalable transport mechanisms to move the data from their sources into an analytics pipeline</li>
-            <li>Use real-time, stream processing to analyze the data for anomalies, patterns, etc.</li>
-            <li>Integrate this with HPC platforms</li>
-          </ol>
-
-          <br><br>
-
-          <h4 class="fragment fade-in" style="background-color: #ca1e3b">Maps our problem to a well-known space
-            with many established solutions</h4>
-
+            <aside class="notes">
+              <ul>
+                <li>Notes</li>
+              </ul>
+            </aside>
 
           </section>
+
+          <section> <!-- SLIDE XX -->
+
+            <h2>Experience &amp; Lessons Learned <i>cont.</i></h2>
+
+            <ul>
+              <li>"Everyone does it..."</li>
+              <li>Adressing the issue is expensive</li>
+              <li>Ignoring it can be expensive, too:</li>
+            </ul>
+
+            <img class="plain" src="images/epcc_data.png"> <br/>
+
+            <aside class="notes">
+              <ul>
+                <li>Notes</li>
+              </ul>
+            </aside>
+
+          </section>
+
         </section>
         <!------------------------------------------------------------------------------------------->
 
+
+        <!-- SLIDE XX -->
         <!------------------------------------------------------------------------------------------->
+        <section>
 
+          <section>
+            <h1>2</h1>
+            <h2>Telemetry as HPC Platform Service</h2>
 
-        <section style="text-align: left;">
-          <h1>THANK YOU</h1>
-          <p>
-            Slides available online: <br>
-            <a style="background-color: #ca1e3b" href="https://oweidner.github.io/ross-2017-talk">
-              https://oweidner.github.io/ross-2017-talk</a>
-            </p>
+            <aside class="notes">
+              <ul>
+
+                <li>
+                  <strong>So we started thinking...</strong>
+                  how would the ideal world look from our perspective.
+                </li>
+
+                <li>
+                  <strong>Telemetry data would be collect for us</strong>
+                </li>
+
+                <li>
+                  <strong>Data analysis would be done for us</strong>
+                </li>
+
+                <li>
+                  <strong>Control signals would be pushed to us</strong>
+                </li>
+
+              </ul>
+            </aside>
+
           </section>
 
-        </div>
+          <section>
+            <h2>Status Quo: Application-Driven </h2>
 
-      </div>
+            <p>Application-level collection and processing of telemtry data can cause a lot of overhead.</p>
 
-      <script src="lib/js/head.min.js"></script>
-      <script src="js/reveal.js"></script>
+            <img class="plain" src="images/data_collection_as_platform_service.png" style="max-height:450px"> <br/>
 
-      <script>
+          </section>
 
-      // Full list of configuration options available at:
-      // https://github.com/hakimel/reveal.js#configuration
-      Reveal.initialize({
-        controls: true,
-        progress: true,
-        history: true,
-        center: true,
+          <section>
+            <h2>Platform Service Approach</h2>
 
-        parallaxBackgroundImage: "./images/parallax.jpg",
+            <p> Telemetry service takes over data collection and provides data access and higher-level functions to applications</p>
 
-        // Parallax background size
-        parallaxBackgroundSize: "3000px 1694px", // - currently only pixels are supported (don't use % or auto)
+            <img class="plain" src="images/data_collection_as_platform_service_2.png" style="max-height:450px"> <br/>
 
-        // Number of pixels to move the parallax background per slide
-        // - Calculated automatically unless specified
-        // - Set to 0 to disable movement along an axis
-        // parallaxBackgroundHorizontal: 20,
-        // parallaxBackgroundVertical: 50,
+            <aside class="notes">
+              <ul>
+                <li>
+                  <strong>Proposal we made in our paper</strong>
+                  And in a way what I am now bringing to this workshop
 
-        slideNumber: true,
-        slideNumber: 'c/t',
+                </li>
+              </ul>
+            </aside>
 
-        transition: 'slide', // none/fade/slide/convex/concave/zoom
+          </section>
 
-        // Optional reveal.js plugins
-        dependencies: [
-          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-          { src: 'plugin/zoom-js/zoom.js', async: true },
-          { src: 'plugin/notes/notes.js', async: true }
-        ]
-      });
+          <section>
+            <h2>Requirements</h2>
 
-      </script>
+            <ul>
+              <li>
+                Captures the time-variant physcial structure and
+                properties of applications
+              </li>
+              <li>
+                Captures the time-variant physcial structure and
+                properties of the HPC platform
+              </li>
 
-    </body>
-    </html>
+              <li>Captures the mapping between the two (contex)</li>
+
+              <li>Programmatic access to the data</li>
+
+              <li>Analytics capabilities</li>
+
+              <li>Notifications</li>
+
+            </ul>
+
+          </section>
+
+          <section>
+            <h2>Requirements <i>cont.</i></h2>
+
+            <ul>
+              <li>Keeps historic data (in condensed compressed form)</li>
+              <li>Is deployable at scalable (think exascale!)</li>
+            </ul>
+
+          </section>
+
+        </section>
+
+        <!-- SLIDE XX -->
+        <!------------------------------------------------------------------------------------------->
+        <section>
+
+          <section>
+            <h1>3</h1>
+
+            <h2>Anatomy &amp; Context Graph Model</h2>
+          </section>
+
+          <section>
+            <h2>Application and Platform Anatomy</h2>
+            Describe time-variant graph structures
+          </section>
+
+          <section>
+            <h2>Context Mapping</h2>
+            Explain how to get from application to platform and vice versa.
+          </section>
+
+          <section>
+            <h2>Example Context Graph</u></h2>
+            <img class="plain" src="images/contextgraph.png" style="max-height:450px"> <br/>
+            Needs annotations. We could even try to animate this
+          </section>
+
+        </section>
+
+        <!-- SLIDE XX -->
+        <!------------------------------------------------------------------------------------------->
+        <section>
+
+          <section>
+            <h1>4</h1>
+            <h2>Service Interaction &amp; Interface</h2>
+
+            <pre><code data-trim data-noescape>
+              (def lazy-fib
+              (concat
+              [0 1]
+              <mark>((fn rfib [a b]</mark>
+              (lazy-cons (+ a b) (rfib b (+ a b)))) 0 1)))
+            </code></pre>
+
+          </section>
+
+          <section>
+            <h2>Language-Agnostic REST API</h2>
+
+            Describe how the graph can be queries effieciently with GraphQL
+            http://graphql.org
+          </section>
+
+          <section>
+            <h2>Complex Graph Queries</h2>
+
+            Describe how the graph can be queries effieciently with GraphQL
+            http://graphql.org
+          </section>
+
+          <section>
+            <h2>Notification and Call-Backs</h2>
+
+            Describe how they are registerd and
+            http://graphql.org
+          </section>
+
+        </section>
+
+
+        <!------------------------------------------------------------------------------------------->
+
+        <section>
+
+          <section>
+            <h1>5</h1>
+            <h2>Implementation </h2>
+          </section>
+
+          <section>
+            <h2>subtopic</h2>
+          </section>
+
+        </section>
+
+
+
+        <!-- SLIDE XX -->
+        <!------------------------------------------------------------------------------------------->
+        <section>
+
+          <section>
+            <h1>6</h1>
+
+            <h2>Outlook</h2>
+
+            Describe the implementation  (figures can be taken from paper)
+
+          </section>
+
+          <section>
+
+            <h2>Data-Driven HPC Idea</u></h2>
+            <p>Apply principles, architectures and tools from "big data" / large-scale data analytics to
+              manage application and platform operational data:</p>
+              <ol>
+                <li>Look at HPC clusters and their application as large-scale distributed continuous sensor data</li>
+                <li>Use scalable transport mechanisms to move the data from their sources into an analytics pipeline</li>
+                <li>Use real-time, stream processing to analyze the data for anomalies, patterns, etc.</li>
+                <li>Integrate this with HPC platforms</li>
+              </ol>
+
+              <br><br>
+
+              <h4 class="fragment fade-in" style="background-color: #ca1e3b">Maps our problem to a well-known space
+                with many established solutions</h4>
+
+
+              </section>
+            </section>
+            <!------------------------------------------------------------------------------------------->
+
+            <!------------------------------------------------------------------------------------------->
+
+
+            <section style="text-align: left;">
+              <h1>THANK YOU</h1>
+              <p>
+                Slides available online: <br>
+                <a style="background-color: #ca1e3b" href="https://oweidner.github.io/ross-2017-talk">
+                  https://oweidner.github.io/ross-2017-talk</a>
+                </p>
+              </section>
+
+            </div>
+
+          </div>
+
+          <script src="lib/js/head.min.js"></script>
+          <script src="js/reveal.js"></script>
+
+          <script>
+
+          // Full list of configuration options available at:
+          // https://github.com/hakimel/reveal.js#configuration
+          Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            parallaxBackgroundImage: "./images/parallax.jpg",
+
+            // Parallax background size
+            parallaxBackgroundSize: "3000px 1694px", // - currently only pixels are supported (don't use % or auto)
+
+            // Number of pixels to move the parallax background per slide
+            // - Calculated automatically unless specified
+            // - Set to 0 to disable movement along an axis
+            // parallaxBackgroundHorizontal: 20,
+            // parallaxBackgroundVertical: 50,
+
+            slideNumber: true,
+            slideNumber: 'c/t',
+
+            transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+            // Optional reveal.js plugins
+            dependencies: [
+              { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+              { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+              { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+              { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+              { src: 'plugin/zoom-js/zoom.js', async: true },
+              { src: 'plugin/notes/notes.js', async: true }
+            ]
+          });
+
+          </script>
+
+        </body>
+        </html>
