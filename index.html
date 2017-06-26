@@ -45,424 +45,463 @@
       <section>
         <!-- <h1><font style="background-color: #ca1e3b">&nbsp; SeaSTAR &nbsp;</font></h1> -->
         <h2 style="background-color: #ca1e3b">
-          Towards a Unified Telemetry Data Framework for HPC Environments</h2>
-        <br/>
+          Towards a Unified Telemetry Service Framework for HPC Environments</h2>
+          <br/>
 
-        <table>
-          <tr>
-            <td align="center"> <small>
-              <!-- <img class="plain" src="images/university_of_edinburgh.png" style="height:40px"> <br/> -->
-              Ole Weidner <br/>
-              School of Informatics <br/>
-              University of Edinburgh <br/>
-              <i><a href="mailto:ole.weidner@ed.ac.uk">ole.weidner@ed.ac.uk</a></i>
-            </small> </td>
-            <td align="center"> <small>
-              <!-- <img class="plain" src="images/university_of_st_andrews.png" style="height:40px"> <br/> -->
-              Adam Barker <br/>
-              School of Computer Science <br/>
-              University of St Andrews <br/>
-              <i><a href="mailto:adam.barker@st-andrews.ac.uk">adam.barker@st-andrews.ac.uk</a></i>
-            </small> </td>
-            <td align="center"> <small>
-              <!-- <img class="plain" src="images/university_of_edinburgh.png" style="height:40px"> <br/> -->
-              Malcolm Atkinson <br/>
-              School of Informatics <br/>
-              University of Edinburgh <br/>
-              <i><a href="mailto:malcolm.atkinson@ed.ac.uk">malcolm.atkinson@ed.ac.uk</a></i>
-            </small> </td>
-        </table>
+          <table>
+            <tr>
+              <td align="center"> <small>
+                <!-- <img class="plain" src="images/university_of_edinburgh.png" style="height:40px"> <br/> -->
+                Ole Weidner <br/>
+                School of Informatics <br/>
+                University of Edinburgh <br/>
+                <i><a href="mailto:ole.weidner@ed.ac.uk">ole.weidner@ed.ac.uk</a></i>
+              </small> </td>
+              <td align="center"> <small>
+                <!-- <img class="plain" src="images/university_of_st_andrews.png" style="height:40px"> <br/> -->
+                Adam Barker <br/>
+                School of Computer Science <br/>
+                University of St Andrews <br/>
+                <i><a href="mailto:adam.barker@st-andrews.ac.uk">adam.barker@st-andrews.ac.uk</a></i>
+              </small> </td>
+              <td align="center"> <small>
+                <!-- <img class="plain" src="images/university_of_edinburgh.png" style="height:40px"> <br/> -->
+                Malcolm Atkinson <br/>
+                School of Informatics <br/>
+                University of Edinburgh <br/>
+                <i><a href="mailto:malcolm.atkinson@ed.ac.uk">malcolm.atkinson@ed.ac.uk</a></i>
+              </small> </td>
+            </table>
 
-        <br/><br/>
+            <br/><br/>
 
-        <h4>International Workshop on Runtime and Operating Systems for Supercomputers</h4>
-        <h4> Washington, D.C., USA, June 27, 2017 </h4>
+            <h4>International Workshop on Runtime and Operating Systems for Supercomputers</h4>
+            <h4> Washington, D.C., USA, June 27, 2017 </h4>
 
-      </section>
-      <!------------------------------------------------------------------------------------------->
+          </section>
+          <!------------------------------------------------------------------------------------------->
 
-      <!-- SLIDE XX -->
-      <!------------------------------------------------------------------------------------------->
-      <!-- <section>
-        <h2>About</h2>
-        <ul>
+          <!-- SLIDE XX -->
+          <!------------------------------------------------------------------------------------------->
+          <!-- <section>
+          <h2>About</h2>
+          <ul>
           <li>Big-data engineer at LEGO System A/S in Denmark</li>
           <li>Part-time PhD student at the University of Edinburgh </li>
           <li>Previously: research associate at Louisiana State University and Rutgers University, USA</li>
           <li>Have been involved for more then 10 years in many <i>second generation</i> HPC application projects</li>
           <ul>
-            <li>SAGA: The Simple API for Grid Applications</li>
-            <li>RADICAL-Pilot workload management system</li>
-            <li>EnsembleMD molecular dynamics toolkit</li>
-            <li>ATLAS PanDA workload management system</li>
-          </ul>
+          <li>SAGA: The Simple API for Grid Applications</li>
+          <li>RADICAL-Pilot workload management system</li>
+          <li>EnsembleMD molecular dynamics toolkit</li>
+          <li>ATLAS PanDA workload management system</li>
         </ul>
-        <br><br>
-      </section> -->
-      <!------------------------------------------------------------------------------------------->
-
-
-      <!-- SLIDE XX -->
-      <!------------------------------------------------------------------------------------------->
-      <section>
-        <h2>Talk Outline</h2>
-        <ol>
-          <li>Application Challenges &amp; Motivation</li>
-          <li>Telemetry as Platform Service</li>
-          <li>Anatomy &amp; Context Graph Model</li>
-          <li>Programming Interface</li>
-          <li>Implementation Blueprint</li>
-          <li>Outlook</li>
-
-        </ol>
-      </section>
-      <!------------------------------------------------------------------------------------------->
-
-<!-- SLIDE XX -->
-<!------------------------------------------------------------------------------------------->
-<section>
-
-  <section> <!-- SLIDE XX -->
-
-    <h1>1</h1>
-    <h2>Application Challenges &amp; Motivation</h2>
-
-    <aside class="notes">
-      - Notes
-    </aside>
-
-  </section>
-
-  <section> <!-- SLIDE XX -->
-
-    <h2>Scenario 1: Degraded Disk I/O</h2>
-
-    <img class="plain" src="images/s1_1.png" style="height:450px"> <br/>
-
-    Describe the single box plot here. Describe how this leads to longer execution times + wasted credits
-
-    <aside class="notes">
-      - Notes
-    </aside>
-
-  </section>
-
-  <section> <!-- SLIDE XX -->
-
-    <h2>Scenario 1: Observation</h2>
-
-    <img class="plain" src="images/s1_2.png" style="height:450px"> <br/>
-
-    Show second plot comapring with I/O throughput (find correct OS metric) trend.
-
-    <aside class="notes">
-      - Notes
-
-    </aside>
-
-  </section>
-
-  <section> <!-- SLIDE XX -->
-
-    <h2>Scenario 1: Contextualization</h2>
-
-    <img class="plain" src="images/s1_3.png" style="height:450px"> <br/>
-
-    Show heatmap and show how faulty nodes caused the issue.
-
-    <aside class="notes">
-      - Notes
-    </aside>
-
-  </section>
-
-  <section> <!-- SLIDE XX -->
-
-    <h2>Scenario 2: Network Issues</h2>
-
-    <img class="plain" src="images/s2_1.png" style="height:450px"> <br/>
-
-    Describe the single box plot here. Describe how this leads to longer execution times + wasted credits
-
-    <aside class="notes">
-      - Notes
-    </aside>
-
-  </section>
-
-  <section> <!-- SLIDE XX -->
-
-    <h2>Scenario 2: Observation</h2>
-
-    <img class="plain" src="images/s2_2.png" style="height:450px"> <br/>
-
-    Show second plot comapring with I/O throughput (find correct OS metric) trend.
-
-    <aside class="notes">
-      - Notes
-
-    </aside>
-
-  </section>
-
-  <section> <!-- SLIDE XX -->
-
-    <h2>Scenario 2: Contextualization</h2>
-
-    <img class="plain" src="images/s2_2.png" style="height:450px"> <br/>
-
-    Show heatmap and explain how faulty network switch caused issues
-
-    <aside class="notes">
-      - Notes
-    </aside>
-
-  </section>
-
-  <section> <!-- SLIDE XX -->
-
-    <h2>Impact</h2>
-    <ul>
-      <li>Adressing the issue is expensive</li>
-      <li>Ignoring it is expensive, too:</li>
-    </ul>
-
-    <img class="plain" src="images/epcc_data.png"> <br/>
-
-
-    <aside class="notes">
-      - Notes
-    </aside>
-
-  </section>
-
-
-  <section> <!-- SLIDE XX -->
-
-    <h2>Challenges &amp; Lessons Learned</h2>
-    <ul>
-      <li>Explain the overhead involved and that no there is no tooling support for this</li>
-      <li>Explain how this is a problem of many 2nd gen application</li>
-    </ul>
-
-    <aside class="notes">
-      - Notes
-    </aside>
-
-  </section>
-
-</section>
-<!------------------------------------------------------------------------------------------->
-
-
-<!-- SLIDE XX -->
-<!------------------------------------------------------------------------------------------->
-<section>
-
-  <section>
-    <h1>2</h1>
-    <h2>Telemetry as Platform Service</h2>
-  </section>
-
-  <section>
-    <h2>Status Quo: Application-Driven </h2>
-
-    <img class="plain" src="images/data_collection_as_platform_service.png" <br/>
-    <p>Application-level collection and processing of telemtry data. This causes a lot of overhead.</p>
-
-  </section>
-
-  <section>
-    <h2>Platform Service Approach</h2>
-
-    <img class="plain" src="images/data_collection_as_platform_service_2.png" <br/>
-    <p> Telemetry service takes over data collection and provides data access and higher-level functions to applications</p>
-
-  </section>
-
-  <section>
-    <h2>Requirements</h2>
-
-    <ul>
-      <li>Explain the requirements for such a platform</li>
-    </ul>
-
-  </section>
-
-  <section>
-    <h2>Requirements <i>cont.</i></h2>
-
-    <ul>
-      <li>Explain the requirements for such a platform</li>
-    </ul>
-
-  </section>
-
-</section>
-
-<!-- SLIDE XX -->
-<!------------------------------------------------------------------------------------------->
-<section>
-
-  <section>
-    <h1>3</h1>
-
-    <h2>Anatomy &amp; Context Graph Model</h2>
-  </section>
-
-  <section>
-    <h2>Application and Platform Anatomy</h2>
-    Describe time-variant graph structures
-  </section>
-
-  <section>
-    <h2>Context Mapping</h2>
-    Explain how to get from application to platform and vice versa.
-  </section>
-
-  <section>
-    <h2>Example Context Graph</u></h2>
-    <img class="plain" src="images/contextgraph.png" style="height:450px"> <br/>
-    Needs annotations. We could even try to animate this
-  </section>
-
-</section>
-
-<!-- SLIDE XX -->
-<!------------------------------------------------------------------------------------------->
-<section>
-
-  <section>
-    <h2>Programming Interface</h2>
-
-    Describe the API with some examples (from paper)
-  </section>
-
-  <section>
-    <h2>Language-Agnostic REST API</h2>
-
-    Describe how the graph can be queries effieciently with GraphQL
-    http://graphql.org
-  </section>
-
-  <section>
-    <h2>Complex Graph Queries</h2>
-
-    Describe how the graph can be queries effieciently with GraphQL
-    http://graphql.org
-  </section>
-
-  <section>
-    <h2>Notification and Call-Backs</h2>
-
-    Describe how they are registerd and
-    http://graphql.org
-  </section>
-
-</section>
-
-
-<!------------------------------------------------------------------------------------------->
-
-<section>
-  <h2>Implementation Blueprint</h2>
-
-  Describe the implementation blueprint (figures can be taken from paper)
-
-</section>
-
-
-
-  <!-- SLIDE XX -->
-  <!------------------------------------------------------------------------------------------->
-  <section>
-
-    <section>
-      <h2>Outlook</h2>
-
-      Describe the implementation blueprint (figures can be taken from paper)
-
-    </section>
-
-    <section>
-
-    <h2>Data-Driven HPC Idea</u></h2>
-    <p>Apply principles, architectures and tools from "big data" / large-scale data analytics to
-      manage application and platform operational data:</p>
-      <ol>
-        <li>Look at HPC clusters and their application as large-scale distributed continuous sensor data</li>
-        <li>Use scalable transport mechanisms to move the data from their sources into an analytics pipeline</li>
-        <li>Use real-time, stream processing to analyze the data for anomalies, patterns, etc.</li>
-        <li>Integrate this with HPC platforms</li>
-      </ol>
-
+      </ul>
       <br><br>
+    </section> -->
+    <!------------------------------------------------------------------------------------------->
 
-      <h4 class="fragment fade-in" style="background-color: #ca1e3b">Maps our problem to a well-known space
-        with many established solutions</h4>
 
+    <!-- SLIDE XX -->
+    <!------------------------------------------------------------------------------------------->
+    <section>
+      <h2>Talk Outline</h2>
+      <ol>
+        <li>Application Challenges &amp; Motivation</li>
+        <li>Telemetry as HPC Platform Service</li>
+        <li>Anatomy &amp; Context Graph Model</li>
+        <li>Service Interaction &amp; Interface</li>
+        <li>Implementation </li>
+        <li>Outlook</li>
+
+      </ol>
+    </section>
+    <!------------------------------------------------------------------------------------------->
+
+    <!-- SLIDE XX -->
+    <!------------------------------------------------------------------------------------------->
+    <section>
+
+      <section> <!-- SLIDE XX -->
+
+        <h1>1</h1>
+        <h2>Application Challenges &amp; Motivation</h2>
+
+        <aside class="notes">
+          I think it is important to understand where our motivation
+          comes from, because what we propose here is probably not
+          equaly important or even relavent to the entire HPC community.
+
+          I want to start with some small anecdote from the
+          every day life (or better my every day life) as an application
+          developer.
+
+          A couple of years ago I was working as a research programmer
+          at Louisiana State University and I ended up doing a lot of
+          work in bioinformatics and molecular dynamics simulation,
+          helping scientists to get their small scale simulations and
+          proof-of-concept implementations on the big HPC systems at a
+          much larger scale.
+
+          Both in bioinformatics and MD we have a plethora of software tools
+          and applications. NAMD probably one of the more popular ones
+          because it won the Gordon Bell AND Sidney Fernbach Award.
+
+          It is quite intersting that even for the same tools, runtime
+          characteristics, parallel scalability,  can vary dramatically,
+          depending on the model parameters or the input data.
+
+          Some simulations would run for hours on thousands of CPU cores, while
+          others would only run for a few minutes or even seconds and would
+          scale pretty badly, if at all.
+
+          For the latter category usually use someting we call a PILOT JOB
+          framework, basically an overlay scheduling menchanism which allows
+          us to run 10 or 100 of thousands of small, short-running jobs in
+          one large batch job.
+
+
+        </aside>
 
       </section>
+
+      <section> <!-- SLIDE XX -->
+
+        <h2>An Intersting Case (1)</h2>
+
+        <p>Runtime distribution of homogeneous simulation tasks</p>
+
+        <img class="plain" src="images/s1_1.png"> <br/>
+
+        <aside class="notes">
+          - Notes
+        </aside>
+
+      </section>
+
+      <section> <!-- SLIDE XX -->
+
+        <h2>Scenario 1: Observation</h2>
+
+        <img class="plain" src="images/s1_2.png" style="height:450px"> <br/>
+
+        Show second plot comapring with I/O throughput (find correct OS metric) trend.
+
+        <aside class="notes">
+          - Notes
+
+        </aside>
+
+      </section>
+
+      <section> <!-- SLIDE XX -->
+
+        <h2>Scenario 1: Contextualization</h2>
+
+        <img class="plain" src="images/s1_3.png" style="height:450px"> <br/>
+
+        Show heatmap and show how faulty nodes caused the issue.
+
+        <aside class="notes">
+          - Notes
+        </aside>
+
+      </section>
+
+      <section> <!-- SLIDE XX -->
+
+        <h2>Scenario 2: Network Issues</h2>
+
+        <img class="plain" src="images/s2_1.png" style="height:450px"> <br/>
+
+        Describe the single box plot here. Describe how this leads to longer execution times + wasted credits
+
+        <aside class="notes">
+          - Notes
+        </aside>
+
+      </section>
+
+      <section> <!-- SLIDE XX -->
+
+        <h2>Scenario 2: Observation</h2>
+
+        <img class="plain" src="images/s2_2.png" style="height:450px"> <br/>
+
+        Show second plot comapring with I/O throughput (find correct OS metric) trend.
+
+        <aside class="notes">
+          - Notes
+
+        </aside>
+
+      </section>
+
+      <section> <!-- SLIDE XX -->
+
+        <h2>Scenario 2: Contextualization</h2>
+
+        <img class="plain" src="images/s2_2.png" style="height:450px"> <br/>
+
+        Show heatmap and explain how faulty network switch caused issues
+
+        <aside class="notes">
+          - Notes
+        </aside>
+
+      </section>
+
+      <section> <!-- SLIDE XX -->
+
+        <h2>Challenges &amp; Lessons Learned</h2>
+        <ul>
+          <li>Explain the overhead involved and that no there is no tooling support for this</li>
+          <li>Explain how this is a problem of many 2nd gen application</li>
+        </ul>
+
+        <aside class="notes">
+          - Notes
+        </aside>
+
+      </section>
+
+      <section> <!-- SLIDE XX -->
+
+        <h2>Impact</h2>
+        <ul>
+          <li>Adressing the issue is expensive</li>
+          <li>Ignoring it can be expensive, too:</li>
+        </ul>
+
+        <img class="plain" src="images/epcc_data.png"> <br/>
+
+        <aside class="notes">
+          - Notes
+        </aside>
+
+      </section>
+
     </section>
-      <!------------------------------------------------------------------------------------------->
-
-            <!------------------------------------------------------------------------------------------->
+    <!------------------------------------------------------------------------------------------->
 
 
-          <section style="text-align: left;">
-            <h1>THANK YOU</h1>
-            <p>
-              Slides available online: <br>
-              <a style="background-color: #ca1e3b" href="https://oweidner.github.io/ross-2017-talk">
-                https://oweidner.github.io/ross-2017-talk</a>
-              </p>
-            </section>
+    <!-- SLIDE XX -->
+    <!------------------------------------------------------------------------------------------->
+    <section>
 
-          </div>
+      <section>
+        <h1>2</h1>
+        <h2>Telemetry as HPC Platform Service</h2>
+      </section>
+
+      <section>
+        <h2>Status Quo: Application-Driven </h2>
+
+        <img class="plain" src="images/data_collection_as_platform_service.png" <br/>
+        <p>Application-level collection and processing of telemtry data. This causes a lot of overhead.</p>
+
+      </section>
+
+      <section>
+        <h2>Platform Service Approach</h2>
+
+        <img class="plain" src="images/data_collection_as_platform_service_2.png" <br/>
+        <p> Telemetry service takes over data collection and provides data access and higher-level functions to applications</p>
+
+      </section>
+
+      <section>
+        <h2>Requirements</h2>
+
+        <ul>
+          <li>Scalable (think exascale!)</li>
+        </ul>
+
+      </section>
+
+      <section>
+        <h2>Requirements <i>cont.</i></h2>
+
+        <ul>
+          <li>x</li>
+        </ul>
+
+      </section>
+
+    </section>
+
+    <!-- SLIDE XX -->
+    <!------------------------------------------------------------------------------------------->
+    <section>
+
+      <section>
+        <h1>3</h1>
+
+        <h2>Anatomy &amp; Context Graph Model</h2>
+      </section>
+
+      <section>
+        <h2>Application and Platform Anatomy</h2>
+        Describe time-variant graph structures
+      </section>
+
+      <section>
+        <h2>Context Mapping</h2>
+        Explain how to get from application to platform and vice versa.
+      </section>
+
+      <section>
+        <h2>Example Context Graph</u></h2>
+        <img class="plain" src="images/contextgraph.png" style="height:450px"> <br/>
+        Needs annotations. We could even try to animate this
+      </section>
+
+    </section>
+
+    <!-- SLIDE XX -->
+    <!------------------------------------------------------------------------------------------->
+    <section>
+
+      <section>
+        <h1>4</h1>
+        <h2>Service Interaction &amp; Interface</h2>
+
+        Describe the API with some examples (from paper)
+      </section>
+
+      <section>
+        <h2>Language-Agnostic REST API</h2>
+
+        Describe how the graph can be queries effieciently with GraphQL
+        http://graphql.org
+      </section>
+
+      <section>
+        <h2>Complex Graph Queries</h2>
+
+        Describe how the graph can be queries effieciently with GraphQL
+        http://graphql.org
+      </section>
+
+      <section>
+        <h2>Notification and Call-Backs</h2>
+
+        Describe how they are registerd and
+        http://graphql.org
+      </section>
+
+    </section>
+
+
+    <!------------------------------------------------------------------------------------------->
+
+    <section>
+
+      <section>
+        <h1>5</h1>
+        <h2>Implementation </h2>
+      </section>
+
+      <section>
+        <h2>subtopic</h2>
+      </section>
+
+    </section>
+
+
+
+    <!-- SLIDE XX -->
+    <!------------------------------------------------------------------------------------------->
+    <section>
+
+      <section>
+        <h1>6</h1>
+
+        <h2>Outlook</h2>
+
+        Describe the implementation  (figures can be taken from paper)
+
+      </section>
+
+      <section>
+
+        <h2>Data-Driven HPC Idea</u></h2>
+        <p>Apply principles, architectures and tools from "big data" / large-scale data analytics to
+          manage application and platform operational data:</p>
+          <ol>
+            <li>Look at HPC clusters and their application as large-scale distributed continuous sensor data</li>
+            <li>Use scalable transport mechanisms to move the data from their sources into an analytics pipeline</li>
+            <li>Use real-time, stream processing to analyze the data for anomalies, patterns, etc.</li>
+            <li>Integrate this with HPC platforms</li>
+          </ol>
+
+          <br><br>
+
+          <h4 class="fragment fade-in" style="background-color: #ca1e3b">Maps our problem to a well-known space
+            with many established solutions</h4>
+
+
+          </section>
+        </section>
+        <!------------------------------------------------------------------------------------------->
+
+        <!------------------------------------------------------------------------------------------->
+
+
+        <section style="text-align: left;">
+          <h1>THANK YOU</h1>
+          <p>
+            Slides available online: <br>
+            <a style="background-color: #ca1e3b" href="https://oweidner.github.io/ross-2017-talk">
+              https://oweidner.github.io/ross-2017-talk</a>
+            </p>
+          </section>
 
         </div>
 
-        <script src="lib/js/head.min.js"></script>
-        <script src="js/reveal.js"></script>
+      </div>
 
-        <script>
+      <script src="lib/js/head.min.js"></script>
+      <script src="js/reveal.js"></script>
 
-        // Full list of configuration options available at:
-        // https://github.com/hakimel/reveal.js#configuration
-        Reveal.initialize({
-          controls: true,
-          progress: true,
-          history: true,
-          center: true,
+      <script>
 
-          parallaxBackgroundImage: "./images/parallax.jpg",
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
 
-          // Parallax background size
-          parallaxBackgroundSize: "3000px 1694px", // - currently only pixels are supported (don't use % or auto)
+        parallaxBackgroundImage: "./images/parallax.jpg",
 
-          // Number of pixels to move the parallax background per slide
-          // - Calculated automatically unless specified
-          // - Set to 0 to disable movement along an axis
-          // parallaxBackgroundHorizontal: 20,
-          // parallaxBackgroundVertical: 50,
+        // Parallax background size
+        parallaxBackgroundSize: "3000px 1694px", // - currently only pixels are supported (don't use % or auto)
 
-          slideNumber: true,
-          slideNumber: 'c/t',
+        // Number of pixels to move the parallax background per slide
+        // - Calculated automatically unless specified
+        // - Set to 0 to disable movement along an axis
+        // parallaxBackgroundHorizontal: 20,
+        // parallaxBackgroundVertical: 50,
 
-          transition: 'slide', // none/fade/slide/convex/concave/zoom
+        slideNumber: true,
+        slideNumber: 'c/t',
 
-          // Optional reveal.js plugins
-          dependencies: [
-            { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-            { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-            { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-            { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-            { src: 'plugin/zoom-js/zoom.js', async: true },
-            { src: 'plugin/notes/notes.js', async: true }
-          ]
-        });
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
 
-        </script>
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
 
-      </body>
-      </html>
+      </script>
+
+    </body>
+    </html>
