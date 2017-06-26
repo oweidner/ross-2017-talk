@@ -174,7 +174,26 @@
         <img class="plain" src="images/s1_1.png"> <br/>
 
         <aside class="notes">
-          - Notes
+          This is the runtime distribution of a number of simulation
+          tasks. Those tasks have a fairly balanced I/O to compute
+          tatio: each individual tasks starts with downloading a specimen
+          from a remote HTTP endpoint, loads it together with a fairly large
+          reference dataset from the cluster filesystem into memory and
+          starts running some sort of a matching algorithm on it.
+
+          Most of them finish in the expected time, about XX minutes, however,
+          there are two clusters of tasks that don't seem to behave nicely.
+
+          It's a small number, but in practice this has lead to some
+          problems because the users of the simulation toolkit, which
+          genereally don't have a CS background saw this step, which is
+          part of a multi-stage pipeline, failing and simply started to adjust
+          the wall-time limit of the batch job to the worst case, to somthing
+          like one hour. This obviously lead to a lot of hollow utilization.
+
+          So we started to look into this, but could not reproduce it
+          on our own systems. So we started to insstrument the framework.
+
         </aside>
 
       </section>
@@ -188,7 +207,7 @@
         Show second plot comapring with I/O throughput (find correct OS metric) trend.
 
         <aside class="notes">
-          - Notes
+
 
         </aside>
 
@@ -366,7 +385,14 @@
         <h1>4</h1>
         <h2>Service Interaction &amp; Interface</h2>
 
-        Describe the API with some examples (from paper)
+        <pre><code data-trim data-noescape>
+        (def lazy-fib
+          (concat
+           [0 1]
+           <mark>((fn rfib [a b]</mark>
+                (lazy-cons (+ a b) (rfib b (+ a b)))) 0 1)))
+        	</code></pre>
+
       </section>
 
       <section>
