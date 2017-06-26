@@ -108,7 +108,7 @@
         <h2>Talk Outline</h2>
         <ol>
           <li>Application Challenges &amp; Motivation</li>
-          <li>Telemetry Data as Platform Service</li>
+          <li>Telemetry as Platform Service</li>
           <li>Anatomy &amp; Context Graph Model</li>
           <li>Programming Interface</li>
           <li>Implementation Blueprint</li>
@@ -124,6 +124,7 @@
 
   <section> <!-- SLIDE XX -->
 
+    <h1>1</h1>
     <h2>Application Challenges &amp; Motivation</h2>
 
     <aside class="notes">
@@ -280,21 +281,23 @@
 <section>
 
   <section>
-    <h2>Telemetry Data as Platform Service</h2>
+    <h1>2</h1>
+    <h2>Telemetry as Platform Service</h2>
+  </section>
 
-    <ul>
-      <li>Explain how seastar started as a gedankenexperiment "what if there would be a platform service..."</li>
-    </ul>
+  <section>
+    <h2>Status Quo: Application-Driven </h2>
 
+    <img class="plain" src="images/data_collection_as_platform_service.png" <br/>
+    <p>Application-level collection and processing of telemtry data. This causes a lot of overhead.</p>
 
   </section>
 
   <section>
-    <h2>Properties</h2>
+    <h2>Platform Service Approach</h2>
 
-    <ul>
-      <li>Explain the requirements for such a platform</li>
-    </ul>
+    <img class="plain" src="images/data_collection_as_platform_service_2.png" <br/>
+    <p> Telemetry service takes over data collection and provides data access and higher-level functions to applications</p>
 
   </section>
 
@@ -307,10 +310,6 @@
 
   </section>
 
-  <section>
-    <h2>TOPIC C</u></h2>
-  </section>
-
 </section>
 
 <!-- SLIDE XX -->
@@ -318,6 +317,8 @@
 <section>
 
   <section>
+    <h1>3</h1>
+
     <h2>Anatomy &amp; Context Graph Model</h2>
   </section>
 
