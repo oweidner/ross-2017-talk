@@ -51,21 +51,21 @@
           <table>
             <tr>
               <td align="center"> <small>
-                <!-- <img class="plain" src="images/university_of_edinburgh.png" style="height:40px"> <br/> -->
+                <!-- <img class="plain" src="images/university_of_edinburgh.png" style="max-height:40px"> <br/> -->
                 Ole Weidner <br/>
                 School of Informatics <br/>
                 University of Edinburgh <br/>
                 <i><a href="mailto:ole.weidner@ed.ac.uk">ole.weidner@ed.ac.uk</a></i>
               </small> </td>
               <td align="center"> <small>
-                <!-- <img class="plain" src="images/university_of_st_andrews.png" style="height:40px"> <br/> -->
+                <!-- <img class="plain" src="images/university_of_st_andrews.png" style="max-height:40px"> <br/> -->
                 Adam Barker <br/>
                 School of Computer Science <br/>
                 University of St Andrews <br/>
                 <i><a href="mailto:adam.barker@st-andrews.ac.uk">adam.barker@st-andrews.ac.uk</a></i>
               </small> </td>
               <td align="center"> <small>
-                <!-- <img class="plain" src="images/university_of_edinburgh.png" style="height:40px"> <br/> -->
+                <!-- <img class="plain" src="images/university_of_edinburgh.png" style="max-height:40px"> <br/> -->
                 Malcolm Atkinson <br/>
                 School of Informatics <br/>
                 University of Edinburgh <br/>
@@ -167,11 +167,11 @@
 
       <section> <!-- SLIDE XX -->
 
-        <h2>An Intersting Case (1)</h2>
+        <h2>An Intersting Case</h2>
 
-        <p>Runtime distribution of homogeneous simulation tasks</p>
+        <p>Unexpected runtime distribution of homogeneous simulation tasks</p>
 
-        <img class="plain" src="images/s1_1.png"> <br/>
+        <img class="plain" src="images/s1_1.png" style="max-height:450px"> <br/>
 
         <aside class="notes">
           This is the runtime distribution of a number of simulation
@@ -192,7 +192,9 @@
           like one hour. This obviously lead to a lot of hollow utilization.
 
           So we started to look into this, but could not reproduce it
-          on our own systems. So we started to insstrument the framework.
+          on our own systems. On the system the scientists were using
+          the outliers would also not show up consistentyl.
+          So we started to instrument the framework.
 
         </aside>
 
@@ -200,14 +202,31 @@
 
       <section> <!-- SLIDE XX -->
 
-        <h2>Scenario 1: Observation</h2>
+        <h2>Observations</h2>
 
-        <img class="plain" src="images/s1_2.png" style="height:450px"> <br/>
+        <p>Outliers seem to have network and filesystem I/O issues</p>
 
-        Show second plot comapring with I/O throughput (find correct OS metric) trend.
+        <img class="plain" src="images/s1_2.png" style="max-height:450px"> <br/>
 
         <aside class="notes">
 
+          <ul>
+            <li>
+              So we would instrument the tasks to revel a bit more debug
+              information, i.e., how much time is spent doing what.
+            </li>
+            <li>
+              We also modified the  pilot job framework to submit one extra
+              process per cluster node to record data about OS-level process
+              metrics, or what we call TELEMETRY DATA.
+            </li>
+            <li>
+              We did a few runs and it quickly became clear that the
+              struggeling tasks seem to have either network or filsystem I/O
+              issues.
+            </li>
+
+          </ul>
 
         </aside>
 
@@ -215,42 +234,70 @@
 
       <section> <!-- SLIDE XX -->
 
-        <h2>Scenario 1: Contextualization</h2>
+        <h2>Finding the Culprint</h2>
 
-        <img class="plain" src="images/s1_3.png" style="height:450px"> <br/>
-
-        Show heatmap and show how faulty nodes caused the issue.
+        <p>A faulty edge switch and a Lustre problem caused some nodes to
+        misbehave </p>
+        <img class="plain" src="images/s1_3.png" style="max-height:450px"> <br/>
 
         <aside class="notes">
-          - Notes
+          <ul>
+
+            <li>
+              <strong>Putting it into the framework</strong>
+              Assuming that these things could happen anytime and
+              anywhere, we started to put the mechanisms we have developed
+              into our application framework so that faulty nodes can
+              be blacklisted automatically.
+            </li>
+
+          </ul>
         </aside>
 
       </section>
 
       <section> <!-- SLIDE XX -->
 
-        <h2>Scenario 2: Network Issues</h2>
+        <h2>Another Interesting Case</h2>
 
-        <img class="plain" src="images/s2_1.png" style="height:450px"> <br/>
+        <p>
+          Again an unexpected runtime distribution of supposedly
+          homogeneous simulation tasks
+        </p>
 
-        Describe the single box plot here. Describe how this leads to longer execution times + wasted credits
+        <img class="plain" src="images/s2_1.png" style="max-height:450px"> <br/>
 
         <aside class="notes">
-          - Notes
+
+          <ul>
+            <li>
+              Notes
+            </li>
+          </ul>
+
         </aside>
 
       </section>
 
       <section> <!-- SLIDE XX -->
 
-        <h2>Scenario 2: Observation</h2>
+        <h2>Observations</h2>
 
-        <img class="plain" src="images/s2_2.png" style="height:450px"> <br/>
+        <p>
+          Outliers seem to run out of memory and crash
+        </p>
 
-        Show second plot comapring with I/O throughput (find correct OS metric) trend.
+        <img class="plain" src="images/s2_2.png" style="max-height:450px"> <br/>
 
         <aside class="notes">
-          - Notes
+          <ul>
+            <li>
+              <strong>Again, difficult to reproduce</strong>
+            </li>
+            <li>
+              <strong>Again, we instrument</strong>
+            </li>
+          </ul>
 
         </aside>
 
@@ -258,44 +305,75 @@
 
       <section> <!-- SLIDE XX -->
 
-        <h2>Scenario 2: Contextualization</h2>
+        <h2>Finding the Culprint</h2>
 
-        <img class="plain" src="images/s2_2.png" style="height:450px"> <br/>
-
-        Show heatmap and explain how faulty network switch caused issues
-
-        <aside class="notes">
-          - Notes
-        </aside>
-
-      </section>
-
-      <section> <!-- SLIDE XX -->
-
-        <h2>Challenges &amp; Lessons Learned</h2>
         <ul>
-          <li>Explain the overhead involved and that no there is no tooling support for this</li>
-          <li>Explain how this is a problem of many 2nd gen application</li>
+          <li>
+            Specific structural properties of the input data would cause the
+            algorithm to take a different trajectory
+          </li>
+          <li>
+            Reduing the task-packing (preempt other tasks on the node) based on
+            observed memory consumption fixed the issue
+          </li>
+        </ul>
+
+
+        <aside class="notes">
+
+          <ul>
+            <ul>
+              <strong>Put it into the framework</strong>
+            </ul>
+          </ul>
+
+        </aside>
+
+      </section>
+
+      <section> <!-- SLIDE XX -->
+
+        <h2>Experience &amp; Lessons Learned</h2>
+        <ul>
+          <li>Instrumetation requires a lot of effort</li>
+          <li>Collecting and analysing data (at scale) is non-trivial</li>
+          <li>Feeding the data back in to the application is non-trivial</li>
+          <li>Existing tooling is sparse and mostly geard toward post-mortem,
+            parallel code debugging
+          <li>
+            Without knowing and understanding the platform "anatomy" and context, data
+            can be difficult to interpret, e.g., what is considered "poor" I/O,
+            what is the spatial layout of processes across nodes?
+          </li>
+
         </ul>
 
         <aside class="notes">
-          - Notes
+          <ul>
+            <li>Notes</li>
+          </ul>
         </aside>
 
       </section>
 
       <section> <!-- SLIDE XX -->
 
-        <h2>Impact</h2>
+        <h2>Experience &amp; Lessons Learned <i>cont.</i></h2>
+
         <ul>
+          <li>"Everyone does it..."</li>
           <li>Adressing the issue is expensive</li>
           <li>Ignoring it can be expensive, too:</li>
         </ul>
 
         <img class="plain" src="images/epcc_data.png"> <br/>
 
+
+
         <aside class="notes">
-          - Notes
+          <ul>
+            <li>Notes</li>
+          </ul>
         </aside>
 
       </section>
@@ -316,7 +394,7 @@
       <section>
         <h2>Status Quo: Application-Driven </h2>
 
-        <img class="plain" src="images/data_collection_as_platform_service.png" <br/>
+        <img class="plain" src="images/data_collection_as_platform_service.png" style="max-height:450px"> <br/>
         <p>Application-level collection and processing of telemtry data. This causes a lot of overhead.</p>
 
       </section>
@@ -371,7 +449,7 @@
 
       <section>
         <h2>Example Context Graph</u></h2>
-        <img class="plain" src="images/contextgraph.png" style="height:450px"> <br/>
+        <img class="plain" src="images/contextgraph.png" style="max-height:450px"> <br/>
         Needs annotations. We could even try to animate this
       </section>
 
@@ -386,12 +464,12 @@
         <h2>Service Interaction &amp; Interface</h2>
 
         <pre><code data-trim data-noescape>
-        (def lazy-fib
+          (def lazy-fib
           (concat
-           [0 1]
-           <mark>((fn rfib [a b]</mark>
-                (lazy-cons (+ a b) (rfib b (+ a b)))) 0 1)))
-        	</code></pre>
+          [0 1]
+          <mark>((fn rfib [a b]</mark>
+          (lazy-cons (+ a b) (rfib b (+ a b)))) 0 1)))
+        </code></pre>
 
       </section>
 
