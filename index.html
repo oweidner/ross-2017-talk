@@ -105,12 +105,12 @@
     <!-- SLIDE XX -->
     <!------------------------------------------------------------------------------------------->
     <section>
-      <h2>Talk Outline</h2>
+      <h2>Outline</h2>
       <ol>
-        <li>Application Challenges &amp; Motivation</li>
+        <li>Application Challenges and Motivation</li>
         <li>Telemetry as HPC Platform Service</li>
-        <li>Anatomy &amp; Context Graph Model</li>
-        <li>Service Interaction &amp; Interface</li>
+        <li>Anatomy and Context Graph Model</li>
+        <li>Interaction and Interface</li>
         <li>Implementation </li>
         <li>Outlook</li>
 
@@ -120,6 +120,23 @@
 
     <!-- SLIDE XX -->
     <!------------------------------------------------------------------------------------------->
+
+    <section>
+
+      <h2>Definition</h2>
+
+      <p><i>
+        HPC Telemetry Data
+      </i></p>
+
+      <p>
+        Any data that describes the state of an HPC platform and the state of
+        the physical representation of the applications running on it.
+      </p>
+
+    </section>
+
+
     <section>
 
       <section> <!-- SLIDE XX -->
@@ -361,7 +378,7 @@
             <h2>Experience &amp; Lessons Learned <i>cont.</i></h2>
 
             <ul>
-              <li>"Everyone does it..."</li>
+              <li>Application-specific are pretty wide spread</li>
               <li>Adressing the issue is expensive</li>
               <li>Ignoring it can be expensive, too:</li>
             </ul>
@@ -370,7 +387,14 @@
 
             <aside class="notes">
               <ul>
-                <li>Notes</li>
+                <li>
+                  <strong>Wide spread: </strong> surveyed autonomous and
+                  dynamic application literature and it seems that
+                  application-specific solutions are common.
+                </li>
+                <li>
+                  Often details about the how are missing entirely
+                </li>
               </ul>
             </aside>
 
@@ -462,6 +486,8 @@
 
               <li>Notifications</li>
 
+              <li>Allows arbitrary level of detail</li>
+
             </ul>
 
           </section>
@@ -472,6 +498,10 @@
             <ul>
               <li>Keeps historic data (in condensed compressed form)</li>
               <li>Is deployable at scalable (think exascale!)</li>
+              <li>
+                <strong>Level of detail: </strong> our granularity / level
+                of interest is not everyone elses.
+              </li>
             </ul>
 
           </section>
@@ -486,6 +516,61 @@
             <h1>3</h1>
 
             <h2>Anatomy &amp; Context Graph Model</h2>
+
+            <aside class="notes">
+              <ul>
+
+                <li>
+                  <strong>Data difficult to use without the context</strong>
+                  So simply collecting metrics and time series of data points
+                  would not be sufficient.
+                </li>
+
+                <li>
+                  <strong>We want to capture the structure or anatomy</strong>
+                </li>
+
+
+              </ul>
+            </aside>
+
+          </section>
+
+          <section>
+            <h2>Graph-Based Model</h2>
+
+            <ul>
+              <li>Provides the context in which time-series can be embedded</li>
+              <li>We use attributed graphs to describe entities and their relations</li>
+              <li>Graphs provide a intuitive way to model arbitrary levels of complexity</li>
+              <li>A single context graph (<i>CG</i>) captures the connections between the </li>
+            </ul>
+
+          </section>
+
+          <section>
+            <h2>Spatial-Temporal Dynamics</h2>
+
+            <ul>
+              <li>Anatomy and structure of platform and applications is not static:</li>
+
+              <ul>
+                <li>Application process start and stop</li>
+                <li>Nodes appear and disappear</li>
+                <li>Hardware (e.g., GPUs or FPGAs) is added</li>
+
+                <li>...</li>
+              </ul>
+
+              <li>All nodes and edges have timestamps that qualify their existence</li>
+
+              <li>To get a snapshot of the platform and applications at a
+                specific point in time, the graph can be queried for a specific
+                time or time range
+              </li>
+
+            </ul>
+
           </section>
 
           <section>
@@ -498,12 +583,6 @@
             Explain how to get from application to platform and vice versa.
           </section>
 
-          <section>
-            <h2>Example Context Graph</u></h2>
-            <img class="plain" src="images/contextgraph.png" style="max-height:450px"> <br/>
-            Needs annotations. We could even try to animate this
-          </section>
-
         </section>
 
         <!-- SLIDE XX -->
@@ -512,7 +591,7 @@
 
           <section>
             <h1>4</h1>
-            <h2>Service Interaction &amp; Interface</h2>
+            <h2>Interaction &amp; Interface</h2>
 
             <pre><code data-trim data-noescape>
               (def lazy-fib
