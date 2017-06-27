@@ -638,14 +638,17 @@
     </section>
 
     <section>
-      <h2>Language-Agnostic REST API</h2>
+      <h2>User- / Application-Facing API</h2>
 
-      Describe how the graph can be queries effieciently with GraphQL
-      http://graphql.org
-    </section>
-
-    <section>
-      <h2>Graph Queries</h2>
+      <ul>
+        <li>Language-Agnostic HTTP/REST API allows to: </li>
+        <ul>
+          <li>Explore / traverse the context graph</li>
+          <li>Register simple "server-side" "derived metrics" functions</li>
+          <li>Define and register call-backs (Websockets)</li>
+          <li>GraphQL for complex graph queries</li>
+        </ul>
+      </ul>
 
       <pre><code data-trim data-noescape>
 {
@@ -660,9 +663,16 @@
 }
       </code></pre>
 
+
     </section>
 
-    <section>
+    <!-- <section>
+      <h2>Graph Queries</h2>
+
+
+    </section> -->
+
+    <!-- <section>
       <h2>Notification and Call-Backs</h2>
 
       Describe how they are registerd and
@@ -674,7 +684,7 @@
         ...
       </code></pre>
 
-    </section>
+    </section> -->
 
   </section>
 
@@ -691,7 +701,7 @@
     <section>
       <h2>Prototype</h2>
 
-      <img class="plain" src="images/implementation.png"> <br/>
+      <img class="plain" src="images/implementation.png" style="max-height:450px"> <br/>
 
     </section>
 
@@ -707,6 +717,11 @@
       <h1>6</h1>
 
       <h2>Discussion</h2>
+
+      <p>This is how we envision an ideal system from the application developer's
+        / user's perspective</p>
+
+      <i>"Try to do as little work as possible."</i>
 
     </section>
 
